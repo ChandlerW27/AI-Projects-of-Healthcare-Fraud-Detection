@@ -3,7 +3,7 @@
 
 ## Project Purpose:
 
-This project develops a Retrieval-Augmented Generation (RAG) chatbot that answers healthcare fraud, waste, abuse, and program integrity questions using official CMS resources (cms.gov). It helps users explore CMS guidance through accurate, source-grounded responses.
+**This project develops a Retrieval-Augmented Generation (RAG) chatbot that answers healthcare fraud, waste, abuse, and program integrity questions using official CMS resources (cms.gov). It helps users explore CMS guidance through accurate, source-grounded responses.**
 
 
 ## Workflow of Project
