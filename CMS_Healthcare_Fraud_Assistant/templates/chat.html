@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="A CMS healthcare fraud assistant grounded in CMS.gov webpages and PDF documents."
+  >
+  <title>CMS Healthcare Fraud Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="brand-row">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img">
+            <path d="M32 4 54 12v16c0 15-9.5 26.5-22 32C19.5 54.5 10 43 10 28V12L32 4Z" fill="#176b87"/>
+            <path d="M32 10 48 16v12c0 10.5-6.2 19.5-16 24.5C22.2 47.5 16 38.5 16 28V16l16-6Z" fill="#eef4f8"/>
+            <rect x="28" y="18" width="8" height="26" rx="2" fill="#176b87"/>
+            <rect x="19" y="27" width="26" height="8" rx="2" fill="#176b87"/>
+            <path d="m23 39 6 6 13-14" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="hero-copy">
+          <div class="badge">CMS.gov RAG Starter</div>
+          <h1>CMS Healthcare Fraud Assistant</h1>
+        </div>
+      </div>
+
+      <p>
+        Ask questions about fraud, waste, abuse, program integrity, warning signs,
+        and CMS guidance.
+      </p>
+    </header>
+
+    <section class="chat-card" aria-label="CMS healthcare fraud chatbot">
+      <div id="messages" class="messages" role="log" aria-live="polite">
+        <div class="message assistant welcome-message">
+          <div class="bubble">
+            <div class="welcome-title">Welcome</div>
+            <div>
+              I answer from the CMS webpages and PDF documents indexed in Pinecone.
+            </div>
+            <div class="example">
+              <strong>Try:</strong> “What are common signs of DMEPOS fraud?”
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form id="chat-form" class="composer" autocomplete="off">
+        <label class="visually-hidden" for="question">
+          Ask a CMS healthcare fraud question
+        </label>
+        <textarea
+          id="question"
+          name="msg"
+          rows="2"
+          maxlength="2000"
+          placeholder="Ask a CMS healthcare fraud question..."
+          required
+        ></textarea>
+        <button id="send-button" type="submit">Ask</button>
+      </form>
+
+      <p class="notice">
+        Educational information only. A warning sign is not proof of fraud.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('chat-form');
+    const question = document.getElementById('question');
+    const messages = document.getElementById('messages');
+    const button = document.getElementById('send-button');
+
+    function scrollToLatest() {
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function addMessage(role, text, sources = []) {
+      const row = document.createElement('div');
+      row.className = `message ${role}`;
+
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+
+      const content = document.createElement('div');
+      content.className = 'answer-text';
+      content.textContent = text;
+      bubble.appendChild(content);
+
+      if (Array.isArray(sources) && sources.length > 0) {
+        const heading = document.createElement('div');
+        heading.className = 'sources-heading';
+        heading.textContent = 'Retrieved CMS sources';
+        bubble.appendChild(heading);
+
+        const list = document.createElement('ul');
+        list.className = 'sources';
+
+        sources.forEach((source, index) => {
+          const item = document.createElement('li');
+          const title = source.title || source.url || 'CMS source';
+          const number = source.number || index + 1;
+
+          if (source.url) {
+            const link = document.createElement('a');
+            link.href = source.url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.textContent = `[${number}] ${title}`;
+            item.appendChild(link);
+          } else {
+            item.textContent = `[${number}] ${title}`;
+          }
+
+          list.appendChild(item);
+        });
+
+        bubble.appendChild(list);
+      }
+
+      row.appendChild(bubble);
+      messages.appendChild(row);
+      scrollToLatest();
+      return row;
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const text = question.value.trim();
+      if (!text) {
+        question.focus();
+        return;
+      }
+
+      addMessage('user', text);
+      question.value = '';
+      button.disabled = true;
+      button.textContent = 'Thinking...';
+
+      const loading = addMessage(
+        'assistant',
+        'Searching the indexed CMS sources...'
+      );
+
+      try {
+        const body = new URLSearchParams({ msg: text });
+        const response = await fetch('/get', {
+          method: 'POST',
+          body
+        });
+
+        const data = await response.json();
+        loading.remove();
+
+        if (!response.ok) {
+          throw new Error(data.error || 'Request failed');
+        }
+
+        addMessage(
+          'assistant',
+          data.answer || 'No answer was returned.',
+          data.sources || []
+        );
+      } catch (error) {
+        loading.remove();
+        addMessage('assistant', `Error: ${error.message}`);
+      } finally {
+        button.disabled = false;
+        button.textContent = 'Ask';
+        question.focus();
+      }
+    });
+
+    question.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        form.requestSubmit();
+      }
+    });
+  </script>
+</body>
+</html>

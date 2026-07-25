@@ -1,0 +1,5 @@
+pip install -r requirements.txt
+
+python crawl_cms.py
+python store_index.py
+python app.py

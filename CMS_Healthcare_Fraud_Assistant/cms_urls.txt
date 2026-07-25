@@ -1,0 +1,14 @@
+# Curated official CMS starting points. The crawler also follows relevant links and runs multiple CMS searches.
+https://www.cms.gov/fraud
+https://www.cms.gov/medicare/medicaid-coordination/center-program-integrity
+https://www.cms.gov/medicare/medicaid-coordination/center-program-integrity/reporting-fraud
+https://www.cms.gov/medicare/medicaid-coordination/center-program-integrity/reports-guidance
+https://www.cms.gov/medicare/medicaid-coordination/healthcare-fraud-prevention-partnership
+https://www.cms.gov/training-education/medicare-learning-network/resources-training/mln-publications-multimedia
+https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/mln-publications-items/mln4649244
+https://www.cms.gov/medicare/medicaid-coordination/fraud-prevention
+https://www.cms.gov/medicare/medicaid-coordination/fraud-prevention/fraudabuseforprofs
+https://www.cms.gov/medicare/medicaid-coordination/fraud-prevention/medicaid-integrity-program
+https://www.cms.gov/medicare/medicaid-coordination/center-program-integrity/provider-audits
+https://www.cms.gov/medicare/medicaid-coordination/center-program-integrity/medical-review
+https://www.cms.gov/data-research/monitoring-programs/medicare-fee-service-compliance-programs
