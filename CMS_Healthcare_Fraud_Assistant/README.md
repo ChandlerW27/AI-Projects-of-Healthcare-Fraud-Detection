@@ -12,7 +12,7 @@ This project develops a Retrieval-Augmented Generation (RAG) chatbot that answer
 
 ## Output of Chatbot
 
-![cms_chatbot](docs/images/cmshatbot.png)
+![cms_chatbot](docs/images/cms_chatbot.png)
 
 
 ## Features
