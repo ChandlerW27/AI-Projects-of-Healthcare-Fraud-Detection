@@ -1,0 +1,16 @@
+{
+  "fix": "Create app/examples before saving example_provider_input.csv",
+  "checks": {
+    "EXAMPLE_DIR defined": true,
+    "EXAMPLE_DIR created": true,
+    "example CSV uses EXAMPLE_DIR": true
+  },
+  "validated_python_files": [
+    "app/app.py",
+    "src/config.py",
+    "src/__init__.py",
+    "src/predict.py",
+    "src/llm_explainer.py",
+    "src/train_logistic.py"
+  ]
+}
