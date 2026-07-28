@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Friendly allergy education assistant grounded in trusted health sources.">
+  <title>AllergyGuide AI Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="shell">
+  <header class="hero">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">✦</div>
+      <div><div class="badge">Trusted-source RAG</div><h1>AllergyGuide</h1></div>
+    </div>
+    <p>Friendly education about allergy symptoms, testing, treatment, prevention, medications, immunotherapy, and finding an allergist.</p>
+  </header>
+
+  <section class="quick-grid" aria-label="Example questions">
+    <button class="quick" data-q="How can I tell respiratory allergies from a cold or flu?">Allergy vs cold or flu</button>
+    <button class="quick" data-q="What allergy tests are useful, and what do the results mean?">Testing and diagnosis</button>
+    <button class="quick" data-q="When are allergy shots or sublingual immunotherapy considered?">Immunotherapy</button>
+    <button class="quick" data-q="What symptoms may indicate anaphylaxis?">Emergency warning signs</button>
+  </section>
+
+  <section class="chat-card">
+    <div id="messages" class="messages" role="log" aria-live="polite">
+      <div class="message assistant"><div class="bubble welcome">
+        <strong>Hello — I’m AllergyGuide.</strong>
+        <span>Describe the symptoms, when they started, possible triggers, fever/body aches, and whether breathing is affected. I can explain patterns and safe next steps, but I cannot diagnose.</span>
+      </div></div>
+    </div>
+    <form id="chat-form" class="composer">
+      <label class="visually-hidden" for="question">Ask an allergy question</label>
+      <textarea id="question" name="msg" rows="2" maxlength="2500" placeholder="Example: My eyes itch and I sneeze every morning, but I have no fever..." required></textarea>
+      <button id="send" type="submit">Ask</button>
+    </form>
+    <div class="safety">Educational information only. For trouble breathing, throat/tongue swelling, fainting, blue lips, or severe wheezing, use prescribed epinephrine and call 911 immediately.</div>
+  </section>
+</main>
+<script>
+const form=document.getElementById('chat-form'), q=document.getElementById('question'), messages=document.getElementById('messages'), send=document.getElementById('send');
+function add(role,text,sources=[],urgent=false){const row=document.createElement('div');row.className=`message ${role}`;const bubble=document.createElement('div');bubble.className=`bubble${urgent?' urgent':''}`;const body=document.createElement('div');body.className='answer';body.textContent=text;bubble.appendChild(body);if(sources.length){const h=document.createElement('div');h.className='source-title';h.textContent='Sources used';bubble.appendChild(h);const ul=document.createElement('ul');ul.className='sources';sources.forEach((s,i)=>{const li=document.createElement('li'),a=document.createElement('a');a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=`[${s.number||i+1}] ${s.source? s.source+' — ':''}${s.title||s.url}`;li.appendChild(a);ul.appendChild(li)});bubble.appendChild(ul)}row.appendChild(bubble);messages.appendChild(row);messages.scrollTop=messages.scrollHeight;return row}
+async function ask(text){add('user',text);q.value='';send.disabled=true;send.textContent='Thinking…';const loading=add('assistant','Searching trusted allergy sources…');try{const r=await fetch('/get',{method:'POST',body:new URLSearchParams({msg:text})});const data=await r.json();loading.remove();if(!r.ok)throw new Error(data.error||'Request failed');add('assistant',data.answer||'No answer returned.',data.sources||[],data.urgent||false)}catch(e){loading.remove();add('assistant',`Error: ${e.message}`)}finally{send.disabled=false;send.textContent='Ask';q.focus()}}
+form.addEventListener('submit',e=>{e.preventDefault();const text=q.value.trim();if(text)ask(text)});
+q.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();form.requestSubmit()}});
+document.querySelectorAll('.quick').forEach(b=>b.addEventListener('click',()=>{q.value=b.dataset.q;form.requestSubmit()}));
+</script>
+</body>
+</html>

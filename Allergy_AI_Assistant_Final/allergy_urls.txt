@@ -1,0 +1,51 @@
+# AAAAI — symptoms, testing, treatment, immunotherapy, finding an allergist
+https://www.aaaai.org/conditions-treatments/allergies
+https://www.aaaai.org/tools-for-the-public/conditions-library/allergies/allergy-testing
+https://www.aaaai.org/tools-for-the-public/conditions-library/allergies/immunotherapy-can-provide-lasting-relief
+https://www.aaaai.org/conditions-treatments/allergies/anaphylaxis
+https://allergist.aaaai.org/find/
+
+# ACAAI — patient education, diagnosis, management, allergist search
+https://acaai.org/allergies/
+https://acaai.org/allergies/testing-diagnosis/
+https://acaai.org/allergies/management-treatment/
+https://acaai.org/find-an-allergist/
+
+# NIH / MedlinePlus — patient-friendly allergy and lab-test information
+https://medlineplus.gov/allergy.html
+https://medlineplus.gov/ency/article/000812.htm
+https://medlineplus.gov/ency/article/000813.htm
+https://medlineplus.gov/lab-tests/food-allergy-testing/
+
+# NIAID — allergy research and clinical guidance
+https://www.niaid.nih.gov/diseases-conditions/allergic-diseases
+https://www.niaid.nih.gov/diseases-conditions/food-allergy
+
+# CDC — respiratory illness comparison and asthma
+https://www.cdc.gov/flu/about/coldflu.html
+https://www.cdc.gov/flu/testing/index.html
+https://www.cdc.gov/respiratory-viruses/about/index.html
+https://www.cdc.gov/asthma/respiratory-infections/index.html
+
+# FDA — medicines, food allergens, labels, epinephrine information
+https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies
+https://www.fda.gov/consumers/consumer-updates/know-which-medication-right-your-seasonal-allergies
+https://www.fda.gov/consumers/consumer-updates/have-food-allergies-read-label
+
+# AAFA — allergy/asthma education and patient resources
+https://aafa.org/allergies/
+https://aafa.org/allergies/allergy-diagnosis/
+https://aafa.org/allergies/allergy-treatments/
+
+# FARE — food allergy, reaction plans, lived experience
+https://www.foodallergy.org/living-food-allergy/food-allergy-essentials/food-allergy-101
+https://www.foodallergy.org/resources/recognizing-and-treating-reaction-symptoms
+https://www.foodallergy.org/living-food-allergy/information-you/newly-diagnosed
+https://www.foodallergy.org/resources/personal-autoinjector-stories
+
+# Mayo Clinic — clinical overviews
+https://www.mayoclinic.org/diseases-conditions/allergies/symptoms-causes/syc-20351497
+https://www.mayoclinic.org/diseases-conditions/allergies/diagnosis-treatment/drc-20351503
+
+# Cleveland Clinic — patient education
+https://my.clevelandclinic.org/health/diseases/8610-allergies
