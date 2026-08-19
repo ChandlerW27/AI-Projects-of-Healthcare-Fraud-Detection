@@ -1,4 +1,4 @@
-# AI Projects for Healthcare Fraud Detection
+# AI Projects for Healthcare Fraud (Anomaly) Detection
  
 ## Overview
 
@@ -61,7 +61,7 @@ Example questions:
 - How do I report Medicare fraud?
 - What are common fraud warning signs?
 
-### 4. Allergy AI Assistant
+### 4. Allergy AI Assistant (Chatbot)
 
 **See Folder:** Allergy_AI_Assistant_Final
 
@@ -88,7 +88,7 @@ It retrieves information from trusted healthcare sources and provides answers wi
 
 Each project has its own setup instructions and requirements.
 
-Open the folder for the project you want to run and follow its `README.md`.
+Open the folder for the project you want to run and follow its README.md.
 
 ## Purpose
 
