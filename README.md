@@ -1,4 +1,4 @@
-# AI Projects for Healthcare Fraud (Anomaly) Detection
+# Four AI Projects: Healthcare Fraud Detection and Allergy AI Assistant 
  
 ## Overview
 
