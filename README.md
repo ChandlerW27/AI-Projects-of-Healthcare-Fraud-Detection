@@ -5,6 +5,7 @@
 This part contains four AI projects for healthcare fraud detection, fraud education, and healthcare question answering.
 
 The projects use machine learning (ML), large language models (LLMs), and Retrieval-Augmented Generation (RAG) to analyze healthcare fraud information and build simple AI applications.
+
 <br>
 
 ## Total Four Projects:
