@@ -4,9 +4,9 @@
 
 This repository contains AI projects for healthcare fraud detection, fraud education, and healthcare question answering.
 
-The projects use machine learning, large language models (LLMs), and Retrieval-Augmented Generation (RAG) to analyze healthcare fraud information and build simple AI applications.
+The projects use machine learning (ML), large language models (LLMs), and Retrieval-Augmented Generation (RAG) to analyze healthcare fraud information and build simple AI applications.
 
-## Projects
+## Total Four Projects:
 
 ### 1. CMS Fraud Information Extraction
 
@@ -61,23 +61,12 @@ Example questions:
 
 ### 4. Allergy AI Assistant
 
-**Folder:** `Allergy_AI_Assistant_Final`
+**See Folder:** Allergy_AI_Assistant_Final
 
 An additional healthcare RAG chatbot for allergy education.
 
 It retrieves information from trusted healthcare sources and provides answers with citations.
 
-## Repository Structure
-
-```text
-AI-Projects-of-Healthcare-Fraud-Detection/
-│
-├── Extraction of CMS Fraud Information/
-├── Deployment_of_Healthcare_Fraud_Detection/
-├── CMS_Healthcare_Fraud_Assistant/
-├── Allergy_AI_Assistant_Final/
-└── README.md
-```
 
 ## Technologies
 
@@ -93,7 +82,7 @@ AI-Projects-of-Healthcare-Fraud-Detection/
 - OpenAI
 - Jupyter Notebook
 
-## How to Use
+## How to Run
 
 Each project has its own setup instructions and requirements.
 
@@ -111,3 +100,5 @@ These projects demonstrate how machine learning and generative AI can be used to
 ## Disclaimer
 
 These projects are for educational and demonstration purposes only.
+
+
