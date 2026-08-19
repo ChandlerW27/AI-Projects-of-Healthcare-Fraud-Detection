@@ -10,13 +10,13 @@ The projects use machine learning (ML), large language models (LLMs), and Retrie
 
 ### 1. CMS Fraud Information Extraction
 
-**See Folder:** Extraction of CMS Fraud Information
+See Folder: Extraction of CMS Fraud Information
 
-A Jupyter Notebook that explores CMS healthcare fraud types and common fraud detection methods.
+This project explores CMS healthcare fraud types and common fraud detection methods.
 
 ### 2. Healthcare Fraud Detection App
 
-**See Folder:** Deployment_of_Healthcare_Fraud_Detection
+See Folder: Deployment_of_Healthcare_Fraud_Detection
 
 A Streamlit application that predicts provider fraud risk using a Logistic Regression model.
 
@@ -34,13 +34,12 @@ Fraud risk score
 AI explanation for flagged cases
 ```
 
-The prediction model can run without an OpenAI API key. OpenAI is used only to explain flagged cases.
 
 ### 3. CMS Healthcare Fraud Assistant
 
-**See Folder:** CMS_Healthcare_Fraud_Assistant
+See Folder: CMS_Healthcare_Fraud_Assistant
 
-A RAG chatbot that answers questions about healthcare fraud, waste, abuse, and CMS program integrity.
+A RAG chatbot that answers questions about healthcare fraud, waste, abuse, and CMS program.
 
 It uses official CMS webpages and PDFs to provide source-based answers.
 
@@ -51,8 +50,8 @@ Main technologies:
 - OpenAI
 - LangChain
 - Pinecone
-- Sentence Transformers
-- BM25
+- Transformers
+- BM25 (keyword-based search)
 
 Example questions:
 
@@ -63,9 +62,9 @@ Example questions:
 
 ### 4. Allergy AI Assistant (Chatbot)
 
-**See Folder:** Allergy_AI_Assistant_Final
+See Folder: Allergy_AI_Assistant_Final
 
-An additional healthcare RAG chatbot for allergy education.
+A healthcare RAG chatbot for allergy education or common sense.
 
 It retrieves information from trusted healthcare sources and provides answers with citations.
 
@@ -86,9 +85,9 @@ It retrieves information from trusted healthcare sources and provides answers wi
 
 ## Methods
 
-Each project has its own setup instructions and requirements.
+Each project has its own methods.
 
-Open the folder for the project you want to run and follow its README.md.
+Please follow its README.md of each project.
 
 ## Purpose
 
@@ -97,10 +96,10 @@ These projects demonstrate how machine learning and generative AI can be used to
 - Detect possible healthcare fraud
 - Explain fraud-risk predictions
 - Retrieve healthcare fraud information
-- Build source-grounded healthcare AI assistants
+- Build source-grounded healthcare AI assistants (like Allegy)
 
 ## Disclaimer
 
-These projects are for educational and demonstration purposes only.
+These projects are for educational and practice purposes only.
 
 
