@@ -24,7 +24,7 @@ A Streamlit application that predicts provider fraud risk using a Logistic Regre
 
 **Workflow:**
 
-
+```text
 Provider information
         ↓
 Fraud prediction
@@ -32,7 +32,7 @@ Fraud prediction
 Fraud risk score
         ↓
 AI explanation for flagged cases
-
+```
 
 The prediction model can run without an OpenAI API key. OpenAI is used only to explain flagged cases.
 
